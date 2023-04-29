@@ -9,7 +9,7 @@ import Avatar from "./Avatar";
 
 type Profiles = Database["public"]["Tables"]["profiles"]["Row"];
 
-export default function Account({ session }: { session: Session }) {
+export default function HeaderBar({ session }: { session: Session }) {
   const supabase = useSupabaseClient<Database>();
   const user = useUser();
 
