@@ -12,9 +12,11 @@ const Home = () => {
   const supabase = useSupabaseClient();
   const user = useUser();
 
+  const authorized = session && user;
+
   return (
     <div className="w-full h-full flex-1">
-      {!session ? (
+      {!authorized ? (
         <div className="max-w-[20rem] mx-auto mt-60">
           <div className="text-center font-semibold text-xl ">Healthsimple</div>
           <Auth

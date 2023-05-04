@@ -61,7 +61,7 @@ export default function HeaderBar({
       if (data) {
         setAvatarUrl(data.avatar_url);
         setUsername(user.user_metadata.full_name);
-        setUserEmail(user.email);
+        setUserEmail(user.email || "");
       }
     } catch (error) {
       alert("Error loading user data!");

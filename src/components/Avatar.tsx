@@ -1,7 +1,13 @@
 import Image from "next/image";
 import React from "react";
 
-export default function Avatar({ size, url }: { url: string; size: number }) {
+export default function Avatar({
+  size,
+  url,
+}: {
+  url: string | null;
+  size: number;
+}) {
   return (
     <div>
       {url ? (
