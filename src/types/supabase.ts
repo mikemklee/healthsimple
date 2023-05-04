@@ -9,6 +9,32 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
+      exercises: {
+        Row: {
+          body_part: string | null
+          category: string | null
+          created_at: string | null
+          id: number
+          name: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          body_part?: string | null
+          category?: string | null
+          created_at?: string | null
+          id?: number
+          name?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          body_part?: string | null
+          category?: string | null
+          created_at?: string | null
+          id?: number
+          name?: string | null
+          updated_at?: string | null
+        }
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -40,7 +66,19 @@ export interface Database {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      delete_avatar: {
+        Args: {
+          avatar_url: string
+        }
+        Returns: Record<string, unknown>
+      }
+      delete_storage_object: {
+        Args: {
+          bucket: string
+          object: string
+        }
+        Returns: Record<string, unknown>
+      }
     }
     Enums: {
       [_ in never]: never
