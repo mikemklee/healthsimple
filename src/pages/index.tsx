@@ -6,6 +6,7 @@ import {
   useUser,
 } from "@supabase/auth-helpers-react";
 import HeaderBar from "../components/HeaderBar";
+import ExerciseCardList from "@/components/ExerciseCardList";
 
 const Home = () => {
   const session = useSession();
@@ -49,6 +50,9 @@ const Home = () => {
       ) : (
         <div>
           <HeaderBar session={session} user={user} />
+          <div className="p-4 mx-auto flex flex-col max-w-[60rem]">
+            <ExerciseCardList />
+          </div>
         </div>
       )}
     </div>
