@@ -17,8 +17,6 @@ const Home = () => {
 
   const authorized = session && user;
 
-  console.log(process.env.NEXT_PUBLIC_APP_DOMAIN);
-
   return (
     <div className="w-full h-full flex-1">
       {!authorized ? (
