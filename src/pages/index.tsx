@@ -25,7 +25,7 @@ const Home = () => {
             Healthsimple
           </div>
           <Auth
-            redirectTo={process.env.NEXT_PUBLIC_APP_DOMAIN}
+            redirectTo={process.env.NEXT_PUBLIC_AUTH_REDIRECT_URL}
             supabaseClient={supabase}
             appearance={{
               theme: ThemeSupa,
