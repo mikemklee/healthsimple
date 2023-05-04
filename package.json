@@ -10,6 +10,7 @@
     "typegen": "supabase gen types typescript --project-id \"jgewkwzcilmqoutgowrh\" --schema public > src/types/supabase.ts"
   },
   "dependencies": {
+    "@fontsource/lexend": "^4.5.15",
     "@supabase/auth-helpers-nextjs": "^0.6.1",
     "@supabase/auth-helpers-react": "^0.3.1",
     "@supabase/auth-ui-react": "^0.3.5",

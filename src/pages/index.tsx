@@ -8,6 +8,8 @@ import {
 import HeaderBar from "../components/HeaderBar";
 import ExerciseCardList from "@/components/ExerciseCardList";
 
+import "@fontsource/lexend";
+
 const Home = () => {
   const session = useSession();
   const supabase = useSupabaseClient();
@@ -19,7 +21,7 @@ const Home = () => {
     <div className="w-full h-full flex-1">
       {!authorized ? (
         <div className="max-w-[20rem] mx-auto mt-60">
-          <div className="text-center font-semibold text-2xl mb-6">
+          <div className="text-center mb-6 font-semibold text-2xl font-['Lexend']">
             Healthsimple
           </div>
           <Auth

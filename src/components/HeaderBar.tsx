@@ -71,7 +71,7 @@ export default function HeaderBar({
 
   return (
     <div className="flex h-14 items-center justify-end border border-b-neutral-200 px-4 relative">
-      <Link href="/" className="mr-auto font-semibold text-lg">
+      <Link href="/" className="mr-auto font-semibold text-xl font-['Lexend']">
         Healthsimple
       </Link>
       <button onClick={() => setIsMenuOpen(!isMenuOpen)} id="usermenu-toggle">
