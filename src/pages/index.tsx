@@ -5,10 +5,7 @@ import {
   useSupabaseClient,
   useUser,
 } from "@supabase/auth-helpers-react";
-import HeaderBar from "../components/HeaderBar";
 import ExerciseCardList from "@/components/ExerciseCardList";
-
-import "@fontsource/lexend";
 
 const Home = () => {
   const session = useSession();
@@ -51,11 +48,8 @@ const Home = () => {
           />
         </div>
       ) : (
-        <div className="relative">
-          <HeaderBar session={session} user={user} />
-          <div className="p-4 mx-auto flex flex-col max-w-[60rem]">
-            <ExerciseCardList />
-          </div>
+        <div className="p-4 mx-auto flex flex-col max-w-[60rem]">
+          <ExerciseCardList />
         </div>
       )}
     </div>

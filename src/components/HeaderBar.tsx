@@ -1,19 +1,19 @@
-import { useState, useEffect } from "react";
-import { useSupabaseClient, Session, User } from "@supabase/auth-helpers-react";
+import {
+  useSession,
+  useSupabaseClient,
+  useUser,
+} from "@supabase/auth-helpers-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Database } from "../types/supabase";
 import Avatar from "./Avatar";
-import Link from "next/link";
 
 type Profiles = Database["public"]["Tables"]["profiles"]["Row"];
 
-export default function HeaderBar({
-  session,
-  user,
-}: {
-  session: Session;
-  user: User;
-}) {
+export default function HeaderBar() {
   const supabase = useSupabaseClient<Database>();
+  const session = useSession();
+  const user = useUser();
 
   const [avatar_url, setAvatarUrl] = useState<Profiles["avatar_url"]>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +21,9 @@ export default function HeaderBar({
   const [userEmail, setUserEmail] = useState("");
 
   useEffect(() => {
-    getProfile();
+    if (session) {
+      getProfile();
+    }
   }, [session]);
 
   useEffect(() => {
@@ -68,6 +70,10 @@ export default function HeaderBar({
       console.log(error);
     }
   }
+
+  const authorized = session && user;
+
+  if (!authorized) return null;
 
   return (
     <div className="flex h-14 items-center justify-end border border-b-neutral-200 px-4 fixed w-full bg-[#f7f9f9]">
