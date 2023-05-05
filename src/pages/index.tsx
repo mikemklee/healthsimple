@@ -51,7 +51,7 @@ const Home = () => {
           />
         </div>
       ) : (
-        <div>
+        <div className="relative">
           <HeaderBar session={session} user={user} />
           <div className="p-4 mx-auto flex flex-col max-w-[60rem]">
             <ExerciseCardList />

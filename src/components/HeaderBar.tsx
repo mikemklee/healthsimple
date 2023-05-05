@@ -70,7 +70,7 @@ export default function HeaderBar({
   }
 
   return (
-    <div className="flex h-14 items-center justify-end border border-b-neutral-200 px-4 relative">
+    <div className="flex h-14 items-center justify-end border border-b-neutral-200 px-4 fixed w-full bg-[#f7f9f9]">
       <Link href="/" className="mr-auto font-semibold text-xl font-['Lexend']">
         Healthsimple
       </Link>
