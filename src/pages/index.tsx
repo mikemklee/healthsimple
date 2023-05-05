@@ -1,16 +1,9 @@
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { useSessionContext } from "@supabase/auth-helpers-react";
+import { useAuthGuard } from "@/hooks/useAuthGuard";
 
 const Home = () => {
-  const { isLoading: isSessionLoading, session } = useSessionContext();
-  const router = useRouter();
+  const { isSessionLoading, session } = useAuthGuard();
 
-  useEffect(() => {
-    if (!isSessionLoading && !session) {
-      router.push("/login");
-    }
-  }, [router, isSessionLoading, session]);
+  if (isSessionLoading || !session) return null;
 
   return (
     <>
