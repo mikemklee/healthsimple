@@ -77,9 +77,16 @@ export default function HeaderBar() {
 
   return (
     <div className="flex h-14 items-center justify-end border border-b-neutral-200 px-4 fixed w-full bg-[#f7f9f9]">
-      <Link href="/" className="mr-auto font-semibold text-xl font-['Lexend']">
+      <Link href="/" className="font-semibold text-xl font-['Lexend']">
         Healthsimple
       </Link>
+
+      <div className="ml-12 mr-auto">
+        <Link href="/exercises" className="mr-auto text-md ">
+          Exercises
+        </Link>
+      </div>
+
       <button onClick={() => setIsMenuOpen(!isMenuOpen)} id="usermenu-toggle">
         <Avatar url={avatar_url} size={32} />
       </button>
