@@ -7,6 +7,9 @@ type Exercises = Database["public"]["Tables"]["exercises"]["Row"];
 type BodyPartLabelMap = {
   [key: string]: string;
 };
+type CategoryLabelMap = {
+  [key: string]: string;
+};
 
 const ExerciseCardList = () => {
   const [exercises, setExercises] = useState<Exercises[]>([]);
@@ -46,6 +49,17 @@ const ExerciseCardList = () => {
     full_body: "Full Body",
   };
 
+  const categoryLabelMap: CategoryLabelMap = {
+    dumbbell: "Dumbbell",
+    barbell: "Barbell",
+    weighted_bodyweight: "Weighted Bodyweight",
+    assisted_bodyweight: "Assisted Bodyweight",
+    cardio: "Cardio",
+    duration: "Duration",
+    machine: "Machine",
+    reps_only: "Reps Only",
+  };
+
   return (
     <>
       <h1 className="font-semibold text-xl my-4 px-2">Exercises</h1>
@@ -56,10 +70,12 @@ const ExerciseCardList = () => {
             className="bg-white border border-b-neutral-200  shadow-lg rounded-md p-4 flex flex-col gap-2"
           >
             <h3 className="font-semibold">{exercise.name}</h3>
-            <p className="capitalize">
+            <p className="">
               {exercise.body_part ? bodyPartLabelMap[exercise.body_part] : ""}
             </p>
-            <p className="capitalize">{exercise.category}</p>
+            <p className="">
+              {exercise.category ? categoryLabelMap[exercise.category] : ""}
+            </p>
           </div>
         ))}
       </div>
