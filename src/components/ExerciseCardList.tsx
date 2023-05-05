@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import { Database } from "../types/supabase";
+import { Database } from "@/types/supabase";
 
 type Exercises = Database["public"]["Tables"]["exercises"]["Row"];
 
-type BodyPartLabelMap = {
-  [key: string]: string;
-};
-type CategoryLabelMap = {
+type LabelMap = {
   [key: string]: string;
 };
 
@@ -38,7 +35,7 @@ const ExerciseCardList = () => {
     loadExercises();
   }, []);
 
-  const bodyPartLabelMap: BodyPartLabelMap = {
+  const bodyPartLabelMap: LabelMap = {
     shoulders: "Shoulders",
     chest: "Chest",
     back: "Back",
@@ -49,7 +46,7 @@ const ExerciseCardList = () => {
     full_body: "Full Body",
   };
 
-  const categoryLabelMap: CategoryLabelMap = {
+  const categoryLabelMap: LabelMap = {
     dumbbell: "Dumbbell",
     barbell: "Barbell",
     weighted_bodyweight: "Weighted Bodyweight",
@@ -58,6 +55,7 @@ const ExerciseCardList = () => {
     duration: "Duration",
     machine: "Machine",
     reps_only: "Reps Only",
+    other: "Other",
   };
 
   return (
@@ -67,13 +65,13 @@ const ExerciseCardList = () => {
         {exercises.map((exercise) => (
           <div
             key={exercise.id}
-            className="bg-white border border-b-neutral-200  shadow-lg rounded-md p-4 flex flex-col gap-2"
+            className="bg-white border border-b-neutral-200  shadow-lg rounded-md p-4 flex flex-col gap-1"
           >
             <h3 className="font-semibold">{exercise.name}</h3>
-            <p className="">
+            <p className="text-sm">
               {exercise.body_part ? bodyPartLabelMap[exercise.body_part] : ""}
             </p>
-            <p className="">
+            <p className="text-sm">
               {exercise.category ? categoryLabelMap[exercise.category] : ""}
             </p>
           </div>

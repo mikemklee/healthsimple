@@ -5,7 +5,7 @@ import {
 } from "@supabase/auth-helpers-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Database } from "../types/supabase";
+import { Database } from "@/types/supabase";
 import Avatar from "./Avatar";
 
 type Profiles = Database["public"]["Tables"]["profiles"]["Row"];
