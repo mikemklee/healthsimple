@@ -4,6 +4,10 @@ import { Database } from "../types/supabase";
 
 type Exercises = Database["public"]["Tables"]["exercises"]["Row"];
 
+type BodyPartLabelMap = {
+  [key: string]: string;
+};
+
 const ExerciseCardList = () => {
   const [exercises, setExercises] = useState<Exercises[]>([]);
   const supabase = useSupabaseClient();
@@ -31,6 +35,17 @@ const ExerciseCardList = () => {
     loadExercises();
   }, []);
 
+  const bodyPartLabelMap: BodyPartLabelMap = {
+    shoulders: "Shoulders",
+    chest: "Chest",
+    back: "Back",
+    legs: "Legs",
+    arms: "Arms",
+    core: "Core",
+    cardio: "Cardio",
+    full_body: "Full Body",
+  };
+
   return (
     <>
       <h1 className="font-semibold text-xl my-4 px-2">Exercises</h1>
@@ -41,7 +56,9 @@ const ExerciseCardList = () => {
             className="bg-white border border-b-neutral-200  shadow-lg rounded-md p-4 flex flex-col gap-2"
           >
             <h3 className="font-semibold">{exercise.name}</h3>
-            <p className="capitalize">{exercise.body_part}</p>
+            <p className="capitalize">
+              {exercise.body_part ? bodyPartLabelMap[exercise.body_part] : ""}
+            </p>
             <p className="capitalize">{exercise.category}</p>
           </div>
         ))}
