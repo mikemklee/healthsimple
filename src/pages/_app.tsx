@@ -7,6 +7,8 @@ import Head from "next/head";
 import HeaderBar from "@/components/HeaderBar";
 
 import "@fontsource/lexend";
+import "@fontsource/noto-sans-kr";
+
 import Layout from "@/components/Layout";
 import FooterBar from "@/components/FooterBar";
 

@@ -4,6 +4,9 @@ dependencies:
   '@fontsource/lexend':
     specifier: ^4.5.15
     version: 4.5.15
+  '@fontsource/noto-sans-kr':
+    specifier: ^4.5.12
+    version: 4.5.12
   '@supabase/auth-helpers-nextjs':
     specifier: ^0.6.1
     version: 0.6.1(@supabase/supabase-js@2.21.0)
@@ -123,6 +126,10 @@ packages:
 
   /@fontsource/lexend@4.5.15:
     resolution: {integrity: sha512-6edLmDmte8pJWtQ1NIahcJq0iWlf6b0/JLwkd7WbDQ3C5tZWnxjvbP4RSklMv4MPzGjpuYuYnc+QANbjUws1oA==}
+    dev: false
+
+  /@fontsource/noto-sans-kr@4.5.12:
+    resolution: {integrity: sha512-6LBOzXw/V4guB/nATaiUjCcPxwJNGw+ky5DK7/wsgUZvfk8etH9IlKdvjFVidpeCuMVjOdlka2+MEw4hwEHaHA==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.8:
