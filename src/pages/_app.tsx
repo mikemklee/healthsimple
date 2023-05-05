@@ -7,6 +7,7 @@ import Head from "next/head";
 import HeaderBar from "@/components/HeaderBar";
 
 import "@fontsource/lexend";
+import Layout from "@/components/Layout";
 
 function MyApp({
   Component,
@@ -26,7 +27,9 @@ function MyApp({
         initialSession={pageProps.initialSession}
       >
         <HeaderBar />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </SessionContextProvider>
     </>
   );

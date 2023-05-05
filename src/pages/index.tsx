@@ -15,7 +15,7 @@ const Home = () => {
   const authorized = session && user;
 
   return (
-    <div className="w-full h-full flex-1">
+    <>
       {!authorized ? (
         <div className="max-w-[20rem] mx-auto mt-60">
           <div className="text-center mb-6 font-semibold text-2xl font-['Lexend']">
@@ -52,7 +52,7 @@ const Home = () => {
           <ExerciseCardList />
         </div>
       )}
-    </div>
+    </>
   );
 };
 
