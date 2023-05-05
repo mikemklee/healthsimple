@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typegen": "supabase gen types typescript --project-id \"jgewkwzcilmqoutgowrh\" --schema public > src/types/supabase.ts"
+    "typegen": "supabase gen types typescript --project-id \"jgewkwzcilmqoutgowrh\" --schema public > src/types/supabase.ts",
+    "seed-db": "node tests/seed-db.mjs"
   },
   "dependencies": {
     "@fontsource/lexend": "^4.5.15",
@@ -30,6 +31,8 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.0.3",
     "supabase": "^1.52.2"
   }
 }
