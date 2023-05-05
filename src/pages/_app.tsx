@@ -8,6 +8,7 @@ import HeaderBar from "@/components/HeaderBar";
 
 import "@fontsource/lexend";
 import Layout from "@/components/Layout";
+import FooterBar from "@/components/FooterBar";
 
 function MyApp({
   Component,
@@ -30,6 +31,7 @@ function MyApp({
         <Layout>
           <Component {...pageProps} />
         </Layout>
+        <FooterBar />
       </SessionContextProvider>
     </>
   );

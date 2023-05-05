@@ -4,6 +4,7 @@ import {
   useUser,
 } from "@supabase/auth-helpers-react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Database } from "@/types/supabase";
 import Avatar from "./Avatar";
@@ -14,6 +15,7 @@ export default function HeaderBar() {
   const supabase = useSupabaseClient<Database>();
   const session = useSession();
   const user = useUser();
+  const router = useRouter();
 
   const [avatar_url, setAvatarUrl] = useState<Profiles["avatar_url"]>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -81,8 +83,13 @@ export default function HeaderBar() {
         Healthsimple
       </Link>
 
-      <div className="ml-12 mr-auto">
-        <Link href="/exercises" className="mr-auto text-md ">
+      <div className="ml-12 mr-auto font-semibold">
+        <Link
+          href="/exercises"
+          className={`mr-auto text-md ${
+            router.pathname === "/exercises" ? "opacity-100" : "opacity-75"
+          } hover:opacity-100 transition-opacity`}
+        >
           Exercises
         </Link>
       </div>
